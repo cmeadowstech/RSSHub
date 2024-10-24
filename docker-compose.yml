@@ -3,7 +3,9 @@ services:
         # two ways to enable puppeteer:
         # * comment out marked lines, then use this image instead: diygod/rsshub:chromium-bundled
         # * (consumes more disk space and memory) leave everything unchanged
-        image: Dockerfile
+        build:
+            context: .
+            dockerfile: Dockerfile
         restart: always
         ports:
             - "1200:1200"
